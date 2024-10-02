@@ -1,7 +1,8 @@
 FROM mcr.microsoft.com/devcontainers/javascript-node:1-18-bullseye
 
 # Playwright dependencies
-RUN apt-get install libnss3 \
+RUN apt-get update
+RUN apt-get install -y libnss3 \
     libnspr4 \
     libdbus \
     libatk1 \
