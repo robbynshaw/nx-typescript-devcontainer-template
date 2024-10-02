@@ -5,10 +5,26 @@
 Start the dev server:
 
 ```sh
-nx run site:dev
+nx dev
+```
+
+Build the static site:
+
+```sh
+nx build site
 ```
 
 ## AWS Deployment
+
+### First Time Setup
+
+```sh
+aws configure
+```
+
+- In `main.ts`, update `STACK_NAME` to something unique for your project.
+
+### Every Other Time
 
 ```sh
 nx run stack:deploy

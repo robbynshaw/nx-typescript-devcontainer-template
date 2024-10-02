@@ -26,7 +26,9 @@
         "ms-playwright.playwright",
         "firsttris.vscode-jest-runner",
         "GitHub.vscode-github-actions",
-        "AmazonWebServices.aws-toolkit-vscode"
+        "AmazonWebServices.aws-toolkit-vscode",
+        "ms-playwright.playwright",
+        "firsttris.vscode-jest-runner"
       ]
     }
   },

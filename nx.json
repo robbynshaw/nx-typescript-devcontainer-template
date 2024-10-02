@@ -6,6 +6,15 @@
     "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"],
     "default": ["sharedGlobals"]
   },
+  "targets": {
+    "deploy": {
+      "dependsOn": [
+        {
+          "target": "site:build"
+        }
+      ]
+    }
+  },
   "targetDefaults": {
     "@nx/vite:test": {
       "cache": true,

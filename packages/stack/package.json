@@ -1,0 +1,11 @@
+{
+  "name": "stack",
+  "version": "1.0.0",
+  "main": "main.ts",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "deploy": "cdk deploy --all",
+    "destroy": "cdk destroy --all"
+  }
+}
