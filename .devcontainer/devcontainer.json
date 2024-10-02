@@ -8,12 +8,12 @@
 
   // Features to add to the dev container. More info: https://containers.dev/features.
   "features": {
-    "ghcr.io/devcontainers/features/aws-cli:1": {},
     "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
       "version": "latest",
       "enableNonRootDocker": true,
       "moby": true
-    }
+    },
+    "ghcr.io/devcontainers/features/aws-cli:1": {}
   },
 
   "customizations": {
@@ -25,7 +25,8 @@
         "nrwl.angular-console",
         "ms-playwright.playwright",
         "firsttris.vscode-jest-runner",
-        "GitHub.vscode-github-actions"
+        "GitHub.vscode-github-actions",
+        "AmazonWebServices.aws-toolkit-vscode"
       ]
     }
   },
@@ -35,12 +36,12 @@
 
   // Use 'portsAttributes' to set default properties for specific forwarded ports.
   // More info: https://containers.dev/implementors/json_reference/#port-attributes
-  "portsAttributes": {
-    "3000": {
-      "label": "Hello Remote World",
-      "onAutoForward": "notify"
-    }
-  },
+  //   "portsAttributes": {
+  //     "3000": {
+  //       "label": "Hello Remote World",
+  //       "onAutoForward": "notify"
+  //     }
+  //   },
 
   // Use 'postCreateCommand' to run commands after the container is created.
   "postCreateCommand": "yarn install"
