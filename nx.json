@@ -3,11 +3,7 @@
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "nxCloudId": "66fc95a9d9d99b6778baee97",
   "namedInputs": {
-    "sharedGlobals": [
-      "{workspaceRoot}/.github/workflows/ci.yml"
-    ],
-    "default": [
-      "sharedGlobals"
-    ]
+    "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"],
+    "default": ["sharedGlobals"]
   }
 }
