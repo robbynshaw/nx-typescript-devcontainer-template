@@ -1,0 +1,46 @@
+{
+  "name": "stack",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "packages/stack/src",
+  "tags": [],
+  "targets": {
+    "synth": {
+      "executor": "@berenddeboer/nx-aws-cdk:cdk",
+      "options": {
+        "command": "synth"
+      }
+    },
+    "deploy": {
+      "executor": "@berenddeboer/nx-aws-cdk:cdk",
+      "options": {
+        "command": "deploy"
+      }
+    },
+    "diff": {
+      "executor": "@berenddeboer/nx-aws-cdk:cdk",
+      "options": {
+        "command": "diff"
+      }
+    },
+    "destroy": {
+      "executor": "@berenddeboer/nx-aws-cdk:cdk",
+      "options": {
+        "command": "destroy"
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
+      "options": {
+        "reportsDirectory": "../../coverage/packages/stack"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "options": {
+        "lintFilePatterns": ["packages/stack/**/*.ts"]
+      }
+    }
+  }
+}
