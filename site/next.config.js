@@ -1,6 +1,5 @@
 //@ts-check
 
-
 const { composePlugins, withNx } = require('@nx/next');
 
 /**
@@ -12,7 +11,7 @@ const nextConfig = {
     // See: https://github.com/gregberge/svgr
     svgr: false,
   },
-  output: 'export'
+  output: 'export',
 };
 
 const plugins = [

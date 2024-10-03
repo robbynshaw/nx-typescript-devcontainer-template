@@ -27,10 +27,10 @@ aws configure
 ### Every Other Time
 
 ```sh
-nx run stack:deploy
+nx deploy stack
 
 # Then, to destroy it
-nx run stack:destroy
+nx destroy stack
 ```
 
 ## Development
