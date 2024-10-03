@@ -23,7 +23,7 @@ export class SiteStack extends cdk.Stack {
     const { domain, subdomain } = props;
     const fullDomain = `${subdomain}.${domain}`;
 
-    const { bucket, responseHeadersPolicy, zone } = props;
+    const { bucket, zone } = props;
     const cfDistribution = new cf.Distribution(this, 'SiteCfDistribution', {
       defaultRootObject: 'index.html',
       defaultBehavior: {
@@ -32,7 +32,6 @@ export class SiteStack extends cdk.Stack {
           // originPath: '/blog',
         }),
         compress: true,
-        // responseHeadersPolicy,
         allowedMethods: cf.AllowedMethods.ALLOW_GET_HEAD_OPTIONS,
         viewerProtocolPolicy: cf.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
       },
@@ -42,8 +41,6 @@ export class SiteStack extends cdk.Stack {
         domainName: domain,
         subjectAlternativeNames: [`${subdomain}.${domain}`],
         validation: acm.CertificateValidation.fromDns(zone),
-        // hostedZone: zone,
-        // region: env?.region,
       }),
       minimumProtocolVersion: SecurityPolicyProtocol.TLS_V1_2_2021,
       errorResponses: [
@@ -59,7 +56,6 @@ export class SiteStack extends cdk.Stack {
       destinationBucket: bucket,
       distribution: cfDistribution,
       distributionPaths: ['/*'],
-      // destinationKeyPrefix: 'blog',
       sources: [s3deploy.Source.asset(join(workspaceRoot(), 'site', 'out'))],
     });
 

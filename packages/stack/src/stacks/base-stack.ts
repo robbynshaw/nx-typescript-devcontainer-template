@@ -64,31 +64,6 @@ export class BaseStack extends cdk.Stack {
         ],
       }),
     );
-    // this._responseHeadersPolicy = new cf.ResponseHeadersPolicy(this, 'BaseResponseHeadersPolicy', {
-    //   responseHeadersPolicyName: 'CustomBaseResponseHeadersPolicy',
-    //   securityHeadersBehavior: {
-    //     /**
-    //      * @todo ResponseHeadersPolicy CSP (for you)
-    //      *
-    //      * When using Hugo, implementing a proper Content Security Policy (CSP) can be
-    //      * challenging when there is limited control over the scripts included on the site.
-    //      */
-    //     // contentSecurityPolicy: { contentSecurityPolicy: 'default-src https:;', override: true },
-    //     contentTypeOptions: { override: true },
-    //     frameOptions: { frameOption: cf.HeadersFrameOption.DENY, override: true },
-    //     referrerPolicy: {
-    //       referrerPolicy: cf.HeadersReferrerPolicy.NO_REFERRER,
-    //       override: true,
-    //     },
-    //     strictTransportSecurity: {
-    //       override: true,
-    //       accessControlMaxAge: Duration.days(365 * 2),
-    //       includeSubdomains: true,
-    //       preload: true,
-    //     },
-    //     xssProtection: { override: true, protection: true, modeBlock: true },
-    //   },
-    // })
     this._zone = route53.HostedZone.fromLookup(this, 'BaseHostedZone', {
       domainName: domain,
     });

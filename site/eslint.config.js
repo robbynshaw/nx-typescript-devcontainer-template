@@ -14,5 +14,5 @@ module.exports = [
   ...fixupConfigRules(compat.extends('next/core-web-vitals')),
   ...baseConfig,
   ...nx.configs['flat/react-typescript'],
-  { ignores: ['.next/**/*'] },
+  { ignores: ['.next/**/*', 'out/**/*'] },
 ];
